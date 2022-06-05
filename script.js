@@ -238,7 +238,7 @@ console.log(friends.includes(23));
 if (friends.includes('Steven')) {
     console.log('You have a friend called Steven');
 }
-*/
+
 
 // const bills = [100, 555, 44];
 // const calcTips = function (bills) {
@@ -287,4 +287,283 @@ if (friends.includes('Steven')) {
 // const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 // console.log(bills, tips);
 // console.log(total);
+
+
+const jonasArray = [
+    'Jones',
+    'Schmedtmann',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven']
+];
+
+
+
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+};
+// console.log(jonas);
+
+// console.log(jonas.lastName)
+// console.log(jonas.friends[2]);
+// console.log(jonas['lastName']);
+
+// const nameKey = 'Name';
+// console.log(jonas['first' + nameKey]);
+// console.log(jonas['last' + nameKey]);
+
+// const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends');
+
+// if (jonas[interestedIn]) {
+//     alert(jonas[interestedIn])
+// } else {
+//     alert('Wrong request!');
+// }
+
+// jonas.location = 'Portugal';
+// jonas['twitter'] = 'jonasschmedtman';
+// console.log(jonas);
+
+console.log('Challenge');
+console.log(`"${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}"`);
+
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+
+    // calcAge: function (birthYear) {
+    //     return 2037 - birthYear;
+    // }
+
+    // calcAge: function () {
+    //     // console.log(this);
+    //     return 2037 - this.birthYear;
+    // }
+    calcAge: function () {
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    },
+
+    getSummary: function () {
+        return `"${this.firstName} is a ${this.calcAge()}- year old ${jonas.job}, and he ${this.hasDriversLicense ? 'a' : 'no'} driver's license"`
+    }
+};
+
+
+// console.log(jonas.calcAge());
+// console.log(jonas.age);
+console.log(jonas.getSummary());
+
+
+
+const mark = {
+    firstName: 'Mark',
+    lastName: 'Miller',
+    mass: 78,
+    height: 1.69,
+
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height ** 2);
+        return this.bmi;
+    }
+}
+
+const john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    mass: 92,
+    height: 1.95,
+
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height ** 2);
+        return this.bmi;
+    }
+}
+mark.calcBMI();
+john.calcBMI();
+console.log(mark.bmi, john.bmi)
+
+if (mark.bmi > john.bmi) {
+    console.log(`${mark.firstName + ' ' + mark.lastName}'s BMI (${mark.bmi}) is higher than John's BMI (${john.bmi})!`)
+} else {
+    console.log(`${john.firstName + ' ' + john.lastName}'s BMI (${john.bmi}) is higher than Mark's BMI (${mark.bmi})`);
+}
+
+// for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+}
+
+const jonas = [
+    'Jonas',
+    'Schmedtmann',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true,
+];
+
+const types = [];
+
+for (let i = 0; i < jonas.length; i++) {
+    // Reading from honas array
+    console.log(jonas[i], typeof jonas[i]);
+
+    // Filling types array
+    // types[i] = typeof jonas[i];
+    types.push(typeof jonas[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+
+const age = [];
+
+for (let i = 0; i < years.length; i++) {
+    age.push(2037 - years[i]);
+}
+console.log(age);
+
+// continue and break
+console.log('------ Only Strings --------------')
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i] !== 'string') continue;
+
+    console.log(jonas[i], typeof jonas[i]);
+}
+
+console.log('------ Break with number --------------')
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i] === 'number') break;
+
+    console.log(jonas[i], typeof jonas[i]);
+}
+
+
+const jonas = [
+    'Jonas',
+    'Schmedtmann',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+for (let i = jonas.length - 1; i >= 0; i--) {
+    console.log(i, jonas[i])
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+    console.log(`--------------- Starting Exercise ${exercise}`);
+
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(` Exercise ${exercise}: Lifting weight repetition ${rep}`)
+    }
+}
+
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition ${rep}`)
+// }
+
+let rep = 1;
+while (rep <= 10) {
+    // console.log(`While: Lifting weights repetition ${rep}`);
+    rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+// console.log(dice);
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log('Loop is about to end...');
+}
+*/
+// const bill = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52,];
+// const tips = []; // tips
+// const total = []; // tips + bills
+
+// const calcTip = function (bill) {
+//     if (bill >= 50 && bill <= 300) {
+//         const tip = bill * 0.15;
+//         return tip;
+//     } else {
+//         const tip = bill * 0.20;
+//         return tip;
+//     }
+// }
+
+// for (let i = 0; i < bill.length; i++) {
+//     tips.push(calcTip(bill[i]));
+//     total.push((bill[i]) + tips[i]);
+//     console.log(`Bill: ${bill[i]}, Tips: ${tips[i]}, Total: ${total[i]}`);
+// }
+
+// const arr = [2, 3, 7];
+// let sum = 0;
+// let average;
+// for (let i = 0; i < arr.length; i++) {
+//     sum = sum + arr[i];
+//     average = sum / arr.length;
+// }
+// console.log(`Total average: ${average}`)
+// console.log(`Total average: ${sum}`)
+
+/*
+const calcTip = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+    const tip = calcTip(bills[i]);
+    tips.push(tip);
+    totals.push(tip + bills[i]);
+}
+console.log(bills, tips, totals);
+
+const calcAverage = function (arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+console.log(calcAverage([2, 3, 7]));
+console.log(calcAverage(totals));
+console.log(calcAverage(tips));
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
