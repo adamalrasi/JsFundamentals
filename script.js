@@ -546,24 +546,12 @@ console.log(calcAverage([2, 3, 7]));
 console.log(calcAverage(totals));
 console.log(calcAverage(tips));
 */
+'use strict';
 
+const x = '23';
 
+if (x === 23) console.log(23);
 
+const calcAge = birthYear => 2037 - birthYear;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(x + '5);
